@@ -10,6 +10,7 @@ def test_wrong_email_or_password(chromium_page: Page):
     email_input = chromium_page.get_by_test_id('login-form-email-input').locator('input')
     email_input.fill("user.name@gmail.com")
 
+
     password_input = chromium_page.get_by_test_id('login-form-password-input').locator('input')
     password_input.fill("password")
 
