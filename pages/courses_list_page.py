@@ -45,7 +45,7 @@ class CoursesListPage(BasePage):
     def check_visible_course_cart(self,
                                   index: int,
                                   title: str,
-                                  max_xcore: str,
+                                  max_score: str,
                                   min_score: str,
                                   estimated_time: str):
         expect(self.course_image.nth(index)).to_be_visible()
@@ -54,7 +54,7 @@ class CoursesListPage(BasePage):
         expect(self.courses_title.nth(index)).to_have_text(title)
 
         expect(self.course_max_text.nth(index)).to_be_visible()
-        expect(self.course_max_text.nth(index)).to_have_text(f"Max score: {max_xcore}")
+        expect(self.course_max_text.nth(index)).to_have_text(f"Max score: {max_score}")
 
         expect(self.course_min_text.nth(index)).to_be_visible()
         expect(self.course_min_text.nth(index)).to_have_text(f"Min score: {min_score}")
@@ -73,5 +73,5 @@ class CoursesListPage(BasePage):
     def click_delete_course(self, index: int):
         self.course_menu_button.nth(index).click()
 
-        expect(self.course_menu_delete_button.nth(index)).to_be_visible()
-        self.course_menu_delete_button.nth(index).click()
+        expect(self.course_menu_delete_button_button.nth(index)).to_be_visible()
+        self.course_menu_edit_button.nth(index).click()
