@@ -73,5 +73,5 @@ class CoursesListPage(BasePage):
     def click_delete_course(self, index: int):
         self.course_menu_button.nth(index).click()
 
-        expect(self.course_menu_delete_button_button.nth(index)).to_be_visible()
+        expect(self.course_menu_button.nth(index)).to_be_visible()
         self.course_menu_edit_button.nth(index).click()
