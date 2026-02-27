@@ -31,7 +31,7 @@ def test_create_course(create_course_page: CreateCoursePage, courses_list_page):
     create_course_page.check_visible_create_exercise_button()
     create_course_page.check_visible_exercises_empty_view()
     create_course_page.upload_preview_image("C:/Cours Playwrite/autotest-ui-pw/testdata/files/IMG_4866.png")
-    create_course_page.check_visible_image_upload_view()
+    create_course_page.check_visible_image_upload_view(is_image_uploaded=True)
     create_course_page.fill_create_course_form(title="Playwright",
                                                estimated_time="2 weeks",
                                                description="Playwright",
@@ -40,5 +40,5 @@ def test_create_course(create_course_page: CreateCoursePage, courses_list_page):
     create_course_page.click_create_course_button()
     courses_list_page.check_visible_courses_title()
     courses_list_page.check_create_course_button()
-    courses_list_page.check_visible_course_cart(index=0, title="Playwright", max_score="100", min_score="10",
+    courses_list_page.course_view.check_visible(index=0, title="Playwright", max_score="100", min_score="10",
                                                 estimated_time="2 weeks")
