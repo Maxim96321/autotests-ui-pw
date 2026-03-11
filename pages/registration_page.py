@@ -1,16 +1,14 @@
 import re
 
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
 from components.autentification.registration_form_component import RegistrationFormComponent
-
 from elements.button import Button
 from elements.link import Link
 from pages.base_page import BasePage
 
 
 class RegistrationPage(BasePage):
-
     def __init__(self, page: Page):
         super().__init__(page)
 
