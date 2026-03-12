@@ -1,2 +1,0 @@
-def authentification():
-    return None

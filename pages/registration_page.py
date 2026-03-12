@@ -2,7 +2,7 @@ import re
 
 from playwright.sync_api import Page
 
-from components.autentification.registration_form_component import RegistrationFormComponent
+from components.authentification.registration_form_component import RegistrationFormComponent
 from elements.button import Button
 from elements.link import Link
 from pages.base_page import BasePage
@@ -22,3 +22,4 @@ class RegistrationPage(BasePage):
 
     def click_registration_button(self):
         self.registration_button.click()
+

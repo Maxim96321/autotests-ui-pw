@@ -1,6 +1,6 @@
 from playwright.sync_api import Page
 
-from components.base_component import BaseComponent
+from components.dashboard.base_component import BaseComponent
 from components.views.emply_view_component import EmptyViewComponent
 from elements.button import Button
 from elements.file_input import FileInput
@@ -62,4 +62,4 @@ class ImageUploadWidgetComponent(BaseComponent):
         self.remove_button.click()
 
     def upload_preview_image(self, file: str):
-        self.upload_input.set_input_files(file)
+        self.upload_input.set_input_file(file)
