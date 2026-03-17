@@ -1,3 +1,4 @@
+from components.dashboard.dashboard_component import DashboardToolbarViewComponent
 from components.navigation.navbar_component import NavbarComponent
 from components.navigation.sidebar_component import SidebarComponent
 from pages.base_page import BasePage
@@ -10,6 +11,7 @@ class DashboardPage(BasePage):
 
         self.navbar = NavbarComponent(page)
         self.sidebar = SidebarComponent(page)
+        self.dashboard_toolbar_view_component = DashboardToolbarViewComponent(page)
 
         self.dashboard_title = page.get_by_test_id("dashboard-toolbar-title-text")
 
