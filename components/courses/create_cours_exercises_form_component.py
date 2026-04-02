@@ -1,6 +1,6 @@
 from components.dashboard.base_component import BaseComponent
 from playwright.sync_api import Page
-
+import allure
 from elements.button import Button
 from elements.input import Input
 from elements.text import Text
@@ -27,6 +27,7 @@ class CreateCourseExercisesForm(BaseComponent):
     def click_delete_button(self, index: int):
         self.delete_exercises_button.click(index=index)
 
+    @allure.step('Check visible create course exercise form at index "{index}"')
     def check_visible(self, index: int, title: str, description: str):
         self.subtitle.check_visible(index=index)
         self.subtitle.check_have_text(f"#{index + 1} Exercise", index=index)
@@ -37,11 +38,10 @@ class CreateCourseExercisesForm(BaseComponent):
         self.description_input.check_visible(index=index)
         self.description_input.check_have_value(description, index=index)
 
+    @allure.step('Fill create course exercise form at index "{index}"')
     def fill_create_exercise_form(self, index: int, title: str, description: str):
-
         self.title_input.fill(title, index=index)
         self.title_input.check_have_value(title, index=index)
 
         self.description_input.fill(description, index=index)
         self.description_input.check_have_value(description, index=index)
-

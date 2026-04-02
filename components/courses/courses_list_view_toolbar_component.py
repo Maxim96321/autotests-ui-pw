@@ -1,6 +1,7 @@
 from components.dashboard.base_component import BaseComponent
 from playwright.sync_api import Page, expect
 import re
+import allure
 
 from elements.button import Button
 from elements.text import Text
