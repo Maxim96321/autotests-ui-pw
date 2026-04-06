@@ -4,17 +4,21 @@ from _pytest.fixtures import SubRequest
 from pages.authentification.registration_page import RegistrationPage
 import allure
 
+
+
 @pytest.fixture
 def chromium_page(request: SubRequest, playwright: Playwright) -> Page:
     browser = playwright.chromium.launch(headless=False)
-    contex = browser.new_context()
+    contex = browser.new_context(record_video_dir="./videos")
     contex.tracing.start(screenshots=True, snapshots=True, sources=True)
+    page = contex.new_page()
 
-    yield contex.new_page()
+    yield page
 
     contex.tracing.stop(path=f'./tracing/{request.node.name}.zip')
     browser.close()
     allure.attach.file(f'./tracing/{request.node.name}.zip', name='trace', extension='zip')
+    allure.attach.file(page.video.path(), name="video", attachment_type=allure.attachment_type.WEBM)
 
 
 @pytest.fixture(scope="session")
@@ -36,11 +40,13 @@ def initialize_browser_state(playwright: Playwright):
 @pytest.fixture()
 def chromium_page_with_state(initialize_browser_state, request: SubRequest, playwright: Playwright) -> Page:
     browser = playwright.chromium.launch(headless=False)
-    context = browser.new_context(storage_state="browser-state.json")
+    context = browser.new_context(storage_state="browser-state.json", record_video_dir="./videos")
 
     context.tracing.start(screenshots=True, snapshots=True, sources=True)
+    page = context.new_page()
 
-    yield context.new_page()
+    yield page
     context.tracing.stop(path=f'./tracing/{request.node.name}.zip')
     browser.close()
     allure.attach.file(f'./tracing/{request.node.name}.zip', name='trace', extension='zip')
+    allure.attach.file(page.video.path(), name="video", attachment_type=allure.attachment_type.WEBM)
