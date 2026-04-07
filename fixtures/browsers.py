@@ -3,19 +3,20 @@ from playwright.sync_api import Page, Playwright
 from _pytest.fixtures import SubRequest
 from pages.authentification.registration_page import RegistrationPage
 import allure
-
+from config import settings
 
 
 @pytest.fixture
 def chromium_page(request: SubRequest, playwright: Playwright) -> Page:
-    browser = playwright.chromium.launch(headless=False)
-    contex = browser.new_context(record_video_dir="./videos")
-    contex.tracing.start(screenshots=True, snapshots=True, sources=True)
-    page = contex.new_page()
+    browser = playwright.chromium.launch(headless=settings.headless)
+    context = browser.new_context(record_video_dir=settings.videos_dir)
+    context.tracing.start(screenshots=True, snapshots=True, sources=True)
+    page = context.new_page()
 
     yield page
 
-    contex.tracing.stop(path=f'./tracing/{request.node.name}.zip')
+    context.tracing.stop(path=f'./tracing/{request.node.name}.zip')
+    #context.tracing.stop(path=settings.tracing_dir.joinpath(f'{test_name}.zip'))
     browser.close()
     allure.attach.file(f'./tracing/{request.node.name}.zip', name='trace', extension='zip')
     allure.attach.file(page.video.path(), name="video", attachment_type=allure.attachment_type.WEBM)
@@ -23,7 +24,7 @@ def chromium_page(request: SubRequest, playwright: Playwright) -> Page:
 
 @pytest.fixture(scope="session")
 def initialize_browser_state(playwright: Playwright):
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=settings.headless)
     context = browser.new_context()
 
     page = context.new_page()
@@ -40,7 +41,7 @@ def initialize_browser_state(playwright: Playwright):
 @pytest.fixture()
 def chromium_page_with_state(initialize_browser_state, request: SubRequest, playwright: Playwright) -> Page:
     browser = playwright.chromium.launch(headless=False)
-    context = browser.new_context(storage_state="browser-state.json", record_video_dir="./videos")
+    context = browser.new_context(storage_state=settings.browser_state_file, record_video_dir=settings.videos_dir)
 
     context.tracing.start(screenshots=True, snapshots=True, sources=True)
     page = context.new_page()
