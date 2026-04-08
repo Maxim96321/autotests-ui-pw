@@ -4,6 +4,7 @@ from _pytest.fixtures import SubRequest
 from pages.authentification.registration_page import RegistrationPage
 import allure
 from config import settings
+from tools.playwright.mocks import mock_static_resources
 
 
 @pytest.fixture
@@ -12,6 +13,7 @@ def chromium_page(request: SubRequest, playwright: Playwright) -> Page:
     context = browser.new_context(record_video_dir=settings.videos_dir)
     context.tracing.start(screenshots=True, snapshots=True, sources=True)
     page = context.new_page()
+    mock_static_resources(page)
 
     yield page
 
@@ -28,6 +30,7 @@ def initialize_browser_state(playwright: Playwright):
     context = browser.new_context()
 
     page = context.new_page()
+    mock_static_resources(page)
 
     registration_page = RegistrationPage(page=page)
     registration_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
