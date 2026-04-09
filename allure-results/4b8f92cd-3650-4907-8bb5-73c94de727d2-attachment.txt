@@ -1,0 +1,7 @@
+[32mINFO    [0m BASE_PAGE:base_page.py:17 Opening URL https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:29 Clicking button "Login"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=login-page-login-button" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that text "Wrong email or password" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=login-page-wrong-email-or-password-alert" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:45 Checking that text "Wrong email or password" has text "Wrong email or password"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=login-page-wrong-email-or-password-alert" at index "0"

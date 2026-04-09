@@ -1,0 +1,33 @@
+[32mINFO    [0m BASE_PAGE:base_page.py:17 Opening URL https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that icon "icon" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=logout-drawer-list-item-icon" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that text "Title" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=logout-drawer-list-item-title-text" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:45 Checking that text "Title" has text "Logout"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=logout-drawer-list-item-title-text" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that button "Button" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=logout-drawer-list-item-button" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that icon "icon" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=courses-drawer-list-item-icon" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that text "Title" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=courses-drawer-list-item-title-text" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:45 Checking that text "Title" has text "Courses"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=courses-drawer-list-item-title-text" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that button "Button" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=courses-drawer-list-item-button" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that icon "icon" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=dashboard-drawer-list-item-icon" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that text "Title" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=dashboard-drawer-list-item-title-text" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:45 Checking that text "Title" has text "Dashboard"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=dashboard-drawer-list-item-title-text" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that button "Button" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=dashboard-drawer-list-item-button" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that text "App title" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=navigation-navbar-app-title-text" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:45 Checking that text "App title" has text "UI Course"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=navigation-navbar-app-title-text" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:38 Checking that text "Welcome title" is visible
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=navigation-navbar-welcome-title-text" at index "0"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:45 Checking that text "Welcome title" has text "Welcome, username!"
+[32mINFO    [0m BASE_ELEMENT:base_elememt.py:23 Getting locator with "data-testid=navigation-navbar-welcome-title-text" at index "0"
