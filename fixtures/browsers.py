@@ -9,7 +9,7 @@ from tools.playwright.mocks import mock_static_resources
 
 @pytest.fixture
 def chromium_page(request: SubRequest, playwright: Playwright) -> Page:
-    browser = playwright.chromium.launch(headless=settings.headless )
+    browser = playwright.chromium.launch(headless=settings.headless)
     context = browser.new_context(record_video_dir=settings.videos_dir)
     context.tracing.start(screenshots=True, snapshots=True, sources=True)
     page = context.new_page()
