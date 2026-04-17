@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright, expect
 
 with sync_playwright() as playwright:
-    chromium = playwright.chromium.launch(headless=False)
+    chromium = playwright.chromium.launch(headless=True)
     page = chromium.new_page()
 
     page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login")

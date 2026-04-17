@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright
 
 
 with sync_playwright() as playwright:
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=True)
     page = browser.new_page()
 
     page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login")
