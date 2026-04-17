@@ -27,7 +27,7 @@ class Settings(BaseSettings):
         env_nested_delimiter=".",  # Указываем разделитель для вложенных переменных
     )
     app_url: HttpUrl
-    headless: bool
+    headless: True
     browsers: list[Browser]
     test_user: TestUser
     test_data: TestData
